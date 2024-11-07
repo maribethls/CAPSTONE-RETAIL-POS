@@ -21,6 +21,7 @@ Route::get('item-master', function () {
 Route::get('sales-module', function () {
     return view('sales-module');
 });
+Route::get('/sales-module', [ItemController::class, 'showSalesModule']);
 
 //REPORTING-MODULE
 Route::get('reporting-module', function () {

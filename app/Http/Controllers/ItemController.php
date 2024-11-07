@@ -89,4 +89,17 @@ class ItemController extends Controller
         Item::find($id)->update(['status' => 'delisted']);
         return redirect()->back();
     }
+
+    // public function showSalesModule()
+    // {
+    //     $items = Item::all(); // Retrieve all items from the database
+    //     dd($items); // Dump and die to check if items are retrieved
+    //     return view('sales-module', compact('items')); // Pass items to the view
+    // }
+
+    public function showSalesModule()
+    {
+        $items = Item::all(); // Retrieve all items from the database
+        return view('sales-module', compact('items')); // Pass items to the view
+    }
 }

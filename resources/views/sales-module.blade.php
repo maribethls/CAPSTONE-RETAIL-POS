@@ -272,38 +272,44 @@
                             </div>
                             <div class="card-body product-slider">
                                 <div class="row" id="product-list">
-                                    <!-- Products will be dynamically populated here -->
-                                    <div class="col-lg-4 col-md-6 mb-4">
+                                    <!-- Static Product Entries -->
+                                    <div class="col-lg-4 col-md-6 mb-4"
+                                        data-product-name="Cornetto Berry Matcha"
+                                        data-product-description="Cornetto Berry Matcha 110mL">
                                         <div class="card h-100">
-                                            <img src="{{ asset ('import/assets/images/product/product3.jpg')  }}" alt="Product 3">
+                                            <img src="{{ asset('import/assets/images/product/product3.jpg') }}" alt="Product 3">
                                             <div class="card-body">
-                                                <h4 class="card-title">Cornetto Berry Matcha 110mL</h4>
+                                                <h4 class="card-title">Cornetto Berry Matcha</h4>
                                                 <h5>₱34.99</h5>
-                                                <p class="card-text">Cornetto Berry Matcha</p>
+                                                <p class="card-text">Cornetto Berry Matcha 110mL</p>
                                             </div>
                                             <div class="card-footer">
                                                 <button class="btn btn-primary add-to-cart" data-product-id="1" data-product-name="Cornetto Berry Matcha 110mL" data-product-price="34.99">Add to Cart</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="col-lg-4 col-md-6 mb-4"
+                                        data-product-name="Nestle Fresh Milk 1L"
+                                        data-product-description="Nestle Fresh Milk Carton 1L">
                                         <div class="card h-100">
                                             <img src="{{ asset ('import/assets/images/product/product1.jpg')  }}" alt="Product 1">
                                             <div class="card-body">
-                                                <h4 class="card-title">Nestle Fresh Milk Carton 1L</h4>
+                                                <h4 class="card-title">Nestle Fresh Milk</h4>
                                                 <h5>₱99.99</h5>
-                                                <p class="card-text">Nestle Fresh Milk 1L</p>
+                                                <p class="card-text">Nestle Fresh Milk Carton 1L</p>
                                             </div>
                                             <div class="card-footer">
                                                 <button class="btn btn-primary add-to-cart" data-product-id="2" data-product-name="Nestle Fresh Milk 1L" data-product-price="99.99">Add to Cart</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="col-lg-4 col-md-6 mb-4"
+                                        data-product-name="Ice Breakers Duo Raspberry 36g"
+                                        data-product-description="Ice Breakers Duo Raspberry Mints 36g">
                                         <div class="card h-100">
                                             <img src="{{ asset ('import/assets/images/product/product5.jpg')  }}" alt="Product 5">
                                             <div class="card-body">
-                                                <h4 class="card-title">Ice Breakers Duo Raspberry 36g</h4>
+                                                <h4 class="card-title">Ice Breakers Duo Raspberry</h4>
                                                 <h5>₱119.99</h5>
                                                 <p class="card-text">Ice Breakers Duo Raspberry Mints 36g</p>
                                             </div>
@@ -312,24 +318,28 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="col-lg-4 col-md-6 mb-4"
+                                        data-product-name="Piattos Cheese 85g"
+                                        data-product-description="Piattos Cheese Flavored Chips 85g">
                                         <div class="card h-100">
                                             <img src="{{ asset ('import/assets/images/product/product4.jpg')  }}" alt="Product 4">
                                             <div class="card-body">
-                                                <h4 class="card-title">Piattos Cheese Flavored Chips 85g</h4>
+                                                <h4 class="card-title">Piattos Cheese</h4>
                                                 <h5>₱37.25</h5>
-                                                <p class="card-text">Piattos Cheese 85g</p>
+                                                <p class="card-text">Piattos Cheese Flavored Chips 85g</p>
                                             </div>
                                             <div class="card-footer">
                                                 <button class="btn btn-primary add-to-cart" data-product-id="4" data-product-name="Piattos Cheese 85g" data-product-price="37.25">Add to Cart</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="col-lg-4 col-md-6 mb-4"
+                                        data-product-name="Fibisco Choco Chip Cookies 600g"
+                                        data-product-description="Fibisco Choco Chip Cookies 600g">
                                         <div class="card h-100">
                                             <img src="{{ asset ('import/assets/images/product/product2.jpg')  }}" alt="Product 2">
                                             <div class="card-body">
-                                                <h4 class="card-title">Fibisco Choco Chip Cookies 600g</h4>
+                                                <h4 class="card-title">Fibisco Choco Chip Cookies</h4>
                                                 <h5>₱249.99</h5>
                                                 <p class="card-text">Fibisco Choco Chip Cookies 600g</p>
                                             </div>
@@ -338,7 +348,30 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Additional products can be added similarly -->
+                                    <!-- Additional static products here -->
+                                    <!-- Dynamic Product Entries from Database -->
+                                    @foreach($items as $item)
+                                        <div class="col-lg-4 col-md-6 mb-4"
+                                            data-product-name="{{ $item->name }}"
+                                            data-product-description="{{ $item->description }}">
+                                            <div class="card h-100">
+                                                <img src="{{ $item->image ? asset('import/assets/images/product/' . $item->image) : asset('import/assets/images/product/logo2.png') }}" alt="{{ $item->name }}">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                                    <h5>₱{{ number_format($item->price, 2) }}</h5>
+                                                    <p class="card-text">{{ $item->description }}</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <button class="btn btn-primary add-to-cart"
+                                                            data-product-id="{{ $item->id }}"
+                                                            data-product-name="{{ $item->name }}"
+                                                            data-product-price="{{ $item->price }}">
+                                                        Add to Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -577,6 +610,17 @@
             const method = this.value;
             document.getElementById('cash-payment-group').style.display = method === 'cash' ? 'block' : 'none';
             document.getElementById('mobile-payment-group').style.display = method === 'mobile' ? 'block' : 'none';
+        });
+
+        // Product Search functionality
+        document.getElementById('product-search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            document.querySelectorAll('#product-list .col-lg-4').forEach(product => {
+                const productName = product.getAttribute('data-product-name').toLowerCase(); // Name
+                const productDescription = product.getAttribute('data-product-description').toLowerCase(); // Description
+                const isVisible = productName.includes(searchTerm) || productDescription.includes(searchTerm);
+                product.style.display = isVisible ? '' : 'none';
+            });
         });
     </script>
 </body>
