@@ -46,8 +46,8 @@
         <div class="iq-sidebar sidebar-default">
             <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
                 <a href="homepage" class="header-logo">
-                    <img src="{{ asset ('import/assets/images/logo.png')  }}" class="img-fluid rounded-normal light-logo" alt="logo">
-                    <h5 class="logo-title light-logo ml-2">save</h5>
+                    {{-- <img src="{{ asset ('import/assets/images/logo.png')  }}" class="img-fluid rounded-normal light-logo" alt="logo"> --}}
+                    <h5 class="logo-title light-logo ml-2">POS</h5>
                 </a>
                 <div class="iq-menu-bt-sidebar ml-2">
                     <i class="las la-bars wrapper-menu"></i>
@@ -94,8 +94,8 @@
                     <nav class="navbar navbar-expand-lg navbar-light p-0">
                         <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                             <a href="homepage" class="header-logo">
-                                <img src="{{ asset ('import/assets/images/logo.png')  }}" class="img-fluid rounded-normal light-logo" alt="logo">
-                                <h5 class="logo-title light-logo ml-2">save</h5>
+                                {{-- <img src="{{ asset ('import/assets/images/logo.png')  }}" class="img-fluid rounded-normal light-logo" alt="logo"> --}}
+                                <h5 class="logo-title light-logo ml-2">POS</h5>
                             </a>
                             <div class="iq-menu-bt-sidebar ml-2">
                                 <i class="las la-bars wrapper-menu"></i>
@@ -355,7 +355,7 @@
                                             data-product-name="{{ $item->name }}"
                                             data-product-description="{{ $item->description }}">
                                             <div class="card h-100">
-                                                <img src="{{ $item->image ? asset('import/assets/images/product/' . $item->image) : asset('import/assets/images/product/logo2.png') }}" alt="{{ $item->name }}">
+                                                <img src="{{ $item->image ? asset('import/assets/images/product/' . $item->image) : asset('import/assets/images/product/default_item.png') }}" alt="{{ $item->name }}">
                                                 <div class="card-body">
                                                     <h4 class="card-title">{{ $item->name }}</h4>
                                                     <h5>₱{{ number_format($item->price, 2) }}</h5>
