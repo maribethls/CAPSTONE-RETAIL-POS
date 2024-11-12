@@ -7,7 +7,7 @@
     <title>Item Master</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset ('import/assets/images/favicon-osave.ico')  }}" />
+    {{-- <link rel="shortcut icon" href="{{ asset ('import/assets/images/favicon-osave.ico')  }}" /> --}}
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset ('import/assets/css/backend-plugin.min.css')  }}">
     <link rel="stylesheet" href="{{ asset ('import/assets/css/backend.css?v=1.0.0')  }}">
